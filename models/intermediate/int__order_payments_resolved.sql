@@ -4,7 +4,8 @@ with order_payments as (
 ranked as (
     select *,
     row_number() over(partition by order_id order by 
-    case when payment_status = 'SUCCESS' then 1 else 0,
+    case when payment_status = 'SUCCESS' then 1 else 0
+    end desc,
     created_at asc) as payment_rank
     from order_payments
 ),
