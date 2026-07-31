@@ -1,0 +1,20 @@
+sources:
+  - name: raw_catalog
+    database: CAPSTONE_ECOMMERCE_DB
+    schema: RAW_CATALOG
+    description: Transaction data
+    config:
+      loaded_at_field: updated_at
+      freshness:
+        warn_after:
+          count: 60
+          period: minute
+    tables:
+      - name: customers
+        description: One row per customer order
+
+      - name: products
+        description: Product catalog
+
+      - name: product_inventory
+        description: stock inhand
