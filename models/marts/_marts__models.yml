@@ -1,5 +1,5 @@
 models:
-  - name: fct_orders_analytics
+  - name: fct__orders_analytics
     description: >
       One row per order -- the analytics table this capstone builds toward.
       Joins order, customer, item-aggregate, and payment data into a single
