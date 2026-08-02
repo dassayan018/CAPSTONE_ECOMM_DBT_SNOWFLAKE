@@ -26,6 +26,7 @@ final as (
     item_aggregates.gross_item_revenue,
     orders.discount_amount,
     orders.delivery_fee,
+    {{ round_currency('item_aggregates.gross_item_revenue - orders.discount_amount + orders.delivery_fee') }} as net_revenue,
     payments.payment_status,
     payments.is_paid,
     payments.amount as payment_amount
